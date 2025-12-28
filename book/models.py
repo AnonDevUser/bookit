@@ -10,7 +10,7 @@ class UserProfile(models.Model):
 
 
 class BookingType(models.Model):
-    name = models.CharField(max_length=20) 
+    name = models.CharField(max_length=20, index=True) 
 
     def __str__(self):
         return self.name
@@ -32,6 +32,11 @@ class Booking(models.Model):
     end_time = models.DateTimeField()
 
     is_approved = models.BooleanField(default=False)
+
+    class Meta:
+        indexes = [
+            models.Index(fields=['item', 'start_time', 'end_time']),
+        ]
 
     def __str__(self):
         return f"{self.user} → {self.item}"
