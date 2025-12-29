@@ -1,5 +1,5 @@
 from rest_framework.decorators import api_view #, permission_classes
-from .serializers import ProfileSerializer, BookingSerializer, ItemSerializer, TypeSerializer
+from .user_serializers import ProfileSerializer, BookingSerializer, ItemSerializer, TypeSerializer
 #from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 
