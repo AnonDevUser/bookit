@@ -51,5 +51,3 @@ class BookingSerializer(serializers.ModelSerializer):
             raise serializers.ValidationError("End time must be after start time")
         return data 
 
-
-
